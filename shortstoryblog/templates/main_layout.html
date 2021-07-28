@@ -14,17 +14,32 @@
     <div class="main-container">
         <div class="header">
             <h3>Short Story Blog</h3>
-            <div class="profile">
-                <div class="img-holder">
-                    <img src="{{ url_for('static', filename='profile_pics/default.jpeg') }}" alt="profile picture" />
+            <div class="profile-container" onclick="showSubMenu()">
+                <div class="profile">
+                    <div class="img-holder">
+                        <img src="{{ url_for('static', filename='profile_pics/default.jpeg') }}"
+                            alt="profile picture" />
+                    </div>
+                    <p>Name</p>
                 </div>
-                <p>Name</p>
+                <div class="sub-menu">
+                    <a class="nav-item nav-link" href="{{ url_for('main.home') }}">Home</a>
+                    <a class="nav-item nav-link" href="">Account</a>
+                    <a class="nav-item nav-link" href="">New Post</a>
+                    <a class="nav-item nav-link" href="">My Posts</a>
+                    <a class="nav-item nav-link" href="">Log out</a>
+                </div>
             </div>
         </div>
         <div class="body-content">
             {% block main_content %}{% endblock main_content %}
         </div>
     </div>
+    <script>
+        function showSubMenu() {
+            document.querySelector('.sub-menu').classList.toggle("active")
+        }
+    </script>
 </body>
 
 </html>
