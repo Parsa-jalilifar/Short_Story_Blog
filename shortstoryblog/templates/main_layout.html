@@ -17,17 +17,16 @@
             <div class="profile-container" onclick="showSubMenu()">
                 <div class="profile">
                     <div class="img-holder">
-                        <img src="{{ url_for('static', filename='profile_pics/default.jpg') }}"
-                            alt="profile picture" />
+                        <img src="{{ url_for('static', filename='profile_pics/default.jpg') }}" alt="profile picture" />
                     </div>
-                    <p>Name</p>
+                    <p>@Name</p>
                 </div>
                 <div class="sub-menu">
-                    <a class="nav-item nav-link" href="{{ url_for('main.home') }}">Home</a>
-                    <a class="nav-item nav-link" href="">Account</a>
-                    <a class="nav-item nav-link" href="">New Post</a>
-                    <a class="nav-item nav-link" href="">My Posts</a>
-                    <a class="nav-item nav-link" href="">Log out</a>
+                    <a href="{{ url_for('main.home') }}">Home</a>
+                    <a href="">Account</a>
+                    <a href="">New Post</a>
+                    <a href="">My Posts</a>
+                    <a href="">Log out</a>
                 </div>
             </div>
         </div>

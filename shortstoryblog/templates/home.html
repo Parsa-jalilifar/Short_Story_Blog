@@ -1,22 +1,23 @@
 {% extends 'main_layout.html' %}
 {% block main_content %}
+{% for post in posts %}
 <div class="card-container">
     <div class="card-box">
-
         <div class="box-top">
-            <p>{{posts[0].date_posted}}</p>
+            <p>{{post.date_posted}}</p>
         </div>
 
         <div class="box-title">
             <div class="img-holder">
                 <img src="{{ url_for('static', filename='profile_pics/default.jpg') }}" alt="profile picture" />
             </div>
-            <h2>"{{posts[0].title}}" By <a href="">{{posts[0].author}}</a></h2>
+            <h2>"{{post.title}}" By <a href="">{{post.author}}</a></h2>
         </div>
 
         <div class="box-content">
-            <p>{{posts[0].content}}</p>
+            <p>{{post.content}}</p>
         </div>
     </div>
 </div>
+{% endfor %}
 {% endblock main_content %}

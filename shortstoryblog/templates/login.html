@@ -1,4 +1,13 @@
 {% extends 'authentication_layout.html' %}
 {% block authentication_content %}
-<p>this is login page.</p>
+<input type="text" name="" id="" placeholder="email">
+<input type="password" name="" id="" placeholder="password">
+<div class="remember-box">
+    <input type="checkbox" name="" id="remember-checkbox">
+    <label for="remember-checkbox">Remember Me</label>
+</div>
+<div class="login-box">
+    <input type="button" value="Login">
+    <a href="">Forget your password?</a>
+</div>
 {% endblock authentication_content %}

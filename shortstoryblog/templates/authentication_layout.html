@@ -11,7 +11,21 @@
 </head>
 
 <body>
-    {% block authentication_content %}{% endblock authentication_content %}
+    <div class="authentication-body">
+        <div class="auth__title">
+            <h2>Welcome to <span>short story blog</span> please login to use the website</h2>
+        </div>
+        <div class="auth-container">
+            <div class="auth-nav">
+                <a href="{{ url_for('users.login') }}">login</a>
+                <a href="{{ url_for('users.register') }}">register</a>
+                <!-- <span></span> -->
+            </div>
+            <div class="auth-container-body">
+                {% block authentication_content %}{% endblock authentication_content %}
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
