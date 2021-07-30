@@ -1,8 +1,57 @@
 {% extends 'authentication_layout.html' %}
 {% block authentication_content %}
-<input type="text" name="" id="" placeholder="username">
-<input type="text" name="" id="" placeholder="email">
-<input type="password" name="" id="" placeholder="password">
-<input type="password" name="" id="" placeholder="confirm password">
-<input type="button" value="register">
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        {% if form.username.errors %}
+        {{form.username(class="form-control is-invalid", placeholder = form.username.label.text)}}
+        <div class="invalid-feedback">
+            {% for error in form.username.errors %}
+            <span>{{error}}</span>
+            {% endfor %}
+        </div>
+        {% else %}
+        {{form.username(class="form-control", placeholder = form.username.label.text)}}
+        {% endif %}
+    </div>
+    <div class="form-group">
+        {% if form.email.errors %}
+        {{form.email(class="form-control is-invalid", placeholder = form.email.label.text)}}
+        <div class="invalid-feedback">
+            {% for error in form.email.errors %}
+            <span>{{error}}</span>
+            {% endfor %}
+        </div>
+        {% else %}
+        {{form.email(class="form-control", placeholder = form.email.label.text)}}
+        {% endif %}
+    </div>
+    <div class="form-group">
+        {% if form.password.errors %}
+        {{form.password(class="form-control is-invalid", placeholder = form.password.label.text)}}
+        <div class="invalid-feedback">
+            {% for error in form.password.errors %}
+            <span>{{error}}</span>
+            {% endfor %}
+        </div>
+        {% else %}
+        {{form.password(class="form-control", placeholder = form.password.label.text)}}
+        {% endif %}
+    </div>
+    <div class="form-group">
+        {% if form.confirm_password.errors %}
+        {{form.confirm_password(class="form-control is-invalid", placeholder = form.confirm_password.label.text)}}
+        <div class="invalid-feedback">
+            {% for error in form.confirm_password.errors %}
+            <span>{{error}}</span>
+            {% endfor %}
+        </div>
+        {% else %}
+        {{form.confirm_password(class="form-control", placeholder = form.confirm_password.label.text)}}
+        {% endif %}
+    </div>
+    <div class="form-group">
+        {{form.submit(class="btn", placeholder = form.submit.label.text)}}
+    </div>
+</form>
 {% endblock authentication_content %}
