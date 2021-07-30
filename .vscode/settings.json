@@ -3,4 +3,7 @@
     "python.analysis.extraPaths": [
         "./path-to-code/"
     ],
+    "cSpell.words": [
+        "wtforms"
+    ],
 }
