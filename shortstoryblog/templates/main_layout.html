@@ -26,12 +26,12 @@
                     <a href="">Account</a>
                     <a href="">New Post</a>
                     <a href="">My Posts</a>
-                    <a href="">Log out</a>
+                    <a href="{{ url_for('users.logout') }}">Log out</a>
                 </div>
             </div>
         </div>
         <div class="body-content">
-            {% with messages = get_flashed_messages(with_categories=true) %}
+            <!-- {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
             {% for category, message in messages %}
             <div class="alert alert-{{ category }}">
@@ -39,7 +39,7 @@
             </div>
             {% endfor %}
             {% endif %}
-            {% endwith %}
+            {% endwith %} -->
             {% block main_content %}{% endblock main_content %}
         </div>
     </div>
