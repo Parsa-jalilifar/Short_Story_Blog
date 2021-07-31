@@ -17,6 +17,7 @@ body {
   --clr2: #f8f9fa;
   --clr3: #e9ecef;
   --danger: #c62d2d;
+  --success: #31c1ef;
 }
 
 .main-container {
@@ -326,4 +327,74 @@ body {
 
 .alert-success {
   background-color: #66c181;
+}
+
+/* Account html styles */
+
+.media {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.media img {
+  margin-right: 1rem;
+}
+
+.body-content .content-section {
+  max-width: 500px;
+  margin: 2rem auto;
+  letter-spacing: 1px;
+}
+
+.body-content .content-section form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+.body-content .content-section form fieldset {
+  padding: 0.6rem 1.2rem;
+}
+
+.body-content .content-section form .form-control-label {
+  padding: 0.6rem 0;
+}
+
+.body-content .content-section form .form-control {
+  padding: 0.6rem;
+  font-size: 16px;
+}
+
+.body-content .content-section form .picture-label {
+  margin: 1.5rem 0 1rem;
+  background-color: var(--success);
+  max-width: 220px;
+  text-align: center;
+  padding: 0.6rem;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+}
+
+.body-content .content-section form .form-control-file {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.body-content .content-section form .btn {
+  padding: 0.8rem;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: var(--clr1);
+  color: #fff;
+  border: none;
+  letter-spacing: 1px;
+  transition: all 0.2s;
+}
+
+.body-content .content-section form .btn:hover {
+  filter: brightness(150%);
 }
