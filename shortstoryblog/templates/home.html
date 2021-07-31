@@ -5,14 +5,14 @@
     {% for post in posts %}
     <div class="card-box">
         <div class="box-top">
-            <p>{{post.date_posted}}</p>
+            <p>{{post.date_posted.strftime("%d %B, %Y")}}</p>
         </div>
 
         <div class="box-title">
             <div class="img-holder">
-                <img src="{{ url_for('static', filename='profile_pics/default.jpg') }}" alt="profile picture" />
+                <img  src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}" alt="profile picture"/>
             </div>
-            <h2>"{{post.title}}" By <a href="">{{post.author}}</a></h2>
+            <h2>"{{post.title}}" By <a href="">{{post.author.username}}</a></h2>
         </div>
 
         <div class="box-content">
