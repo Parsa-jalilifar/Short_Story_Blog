@@ -2,16 +2,21 @@
 {% block main_content %}
 
 <div class="card-container">
-    {% for post in posts %}
+    {% for post in posts.items %}
     <div class="card-box">
         <div class="box-top">
             <p>{{post.date_posted.strftime("%d %B, %Y")}}</p>
-            <span>&#10247;</span> 
+            {% if post.author == current_user %}
+            <span>&#10247;</span>
+            {% else %}
+            <span></span>
+            {% endif %}
         </div>
 
         <div class="box-title">
             <div class="img-holder">
-                <img  src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}" alt="profile picture"/>
+                <img src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}"
+                    alt="profile picture" />
             </div>
             <h2>"{{post.title}}" By <a href="">{{post.author.username}}</a></h2>
         </div>
@@ -21,6 +26,20 @@
         </div>
     </div>
     {% endfor %}
+
+    <div class="paginate-container">
+        {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+        {% if page_num %}
+        {% if posts.page == page_num %}
+        <a class="btn btn-info mb-4" href="{{ url_for('main.home', page=page_num) }}">{{ page_num }}</a>
+        {% else %}
+        <a class="btn btn-outline-info mb-4" href="{{ url_for('main.home', page=page_num) }}">{{ page_num }}</a>
+        {% endif %}
+        {% else %}
+        ...
+        {% endif %}
+        {% endfor %}
+    </div>
 </div>
 
 {% endblock main_content %}
