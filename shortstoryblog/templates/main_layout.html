@@ -17,7 +17,7 @@
             <div class="profile-container" onclick="showSubMenu()">
                 <div class="profile">
                     <div class="img-holder">
-                        <img src="{{ url_for('static', filename='profile_pics/default.jpg') }}" alt="profile picture" />
+                        <img  src="{{ url_for('static', filename='profile_pics/' + current_user.image_file) }}" alt="profile picture"/>
                     </div>
                     <p>@Name</p>
                 </div>

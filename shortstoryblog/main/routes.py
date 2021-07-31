@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, url_for
-from flask_login import login_required
+from flask_login import login_required, current_user
 from shortstoryblog.models import Post
 
 main = Blueprint("main", __name__)
