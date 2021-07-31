@@ -19,7 +19,7 @@
                     <div class="img-holder">
                         <img  src="{{ url_for('static', filename='profile_pics/' + current_user.image_file) }}" alt="profile picture"/>
                     </div>
-                    <p>@Name</p>
+                    <p>@{{current_user.username}}</p>
                 </div>
                 <div class="sub-menu">
                     <a href="{{ url_for('main.home') }}">Home</a>
