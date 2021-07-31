@@ -152,8 +152,7 @@ body {
   margin-right: 1rem;
 }
 
-.card-container .card-box .box-top::after {
-  content: "\2807";
+.card-container .card-box .box-top span {
   font-size: 32px;
 }
 
