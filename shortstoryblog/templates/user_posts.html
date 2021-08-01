@@ -1,7 +1,7 @@
 {% extends 'main_layout.html' %}
 {% block main_content %}
-
 <div class="card-container">
+    <h1 class="mypost-title">Posts by {{ user.username }} ({{ posts.total }})</h1>
     {% for post in posts.items %}
     <div class="card-box">
         <div class="box-top">
