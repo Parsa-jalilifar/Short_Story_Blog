@@ -221,7 +221,10 @@ body {
 .card-container .card-box .box-title h2 {
   font-weight: 500;
 }
-.card-container .card-box .box-title h2 a {
+.card-container .card-box .box-title > a {
+  margin-right: 0.3rem;
+}
+.card-container .card-box .box-title a {
   text-decoration: none;
   color: #000;
   position: relative;

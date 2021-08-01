@@ -1,0 +1,30 @@
+{% extends "main_layout.html" %}
+{% block main_content %}
+<div class="card-container">
+
+  <div class="card-box">
+    {% if post.author == current_user %}
+    <div class="card-controls">
+      <a href="{{ url_for('posts.delete_post', post_id=post.id) }}"> <i class="fas fa-trash-alt"></i></a>
+      <a href="{{ url_for('posts.update_post', post_id=post.id) }}"><i class="fas fa-edit"></i></a>
+    </div>
+    {% endif %}
+    <div class="box-top">
+      <p>{{post.date_posted.strftime("%d %B, %Y")}}</p>
+    </div>
+
+    <div class="box-title">
+      <div class="img-holder">
+        <img src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}" alt="profile picture" />
+      </div>
+      <h2>"{{post.title}}"<a href="{{ url_for('users.user_posts', username=post.author.username) }}"> By
+          {{post.author.username}}</a>
+      </h2>
+    </div>
+
+    <div class="box-content">
+      <p>{{post.content}}</p>
+    </div>
+  </div>
+</div>
+{% endblock main_content %}
