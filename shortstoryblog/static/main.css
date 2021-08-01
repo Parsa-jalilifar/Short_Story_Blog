@@ -360,7 +360,7 @@ body {
 
 .media {
   display: flex;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .media img {
@@ -394,6 +394,9 @@ body {
 .body-content .content-section form fieldset legend {
   position: relative;
   top: -10px;
+  margin-top: 1rem;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .body-content .content-section form .form-control-label {
@@ -405,6 +408,11 @@ body {
   font-size: 16px;
 }
 
+.body-content .content-section form textarea {
+  resize: vertical;
+  min-height: 200px;
+}
+
 .body-content .content-section form .picture-label {
   margin: 1.5rem 0 1rem;
   background-color: var(--success);
@@ -413,7 +421,7 @@ body {
   padding: 0.6rem;
   cursor: pointer;
   color: white;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .body-content .content-section form .form-control-file {
@@ -435,6 +443,7 @@ body {
   border: none;
   letter-spacing: 1px;
   transition: all 0.2s;
+  margin-top: 0.5rem;
 }
 
 .body-content .content-section form .btn:hover {
