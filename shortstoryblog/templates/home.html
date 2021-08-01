@@ -6,8 +6,8 @@
     <div class="card-box">
         {% if post.author == current_user %}
         <div class="card-controls">
-            <a href=""> <i class="fas fa-trash-alt"></i></a>
-            <a href=""><i class="fas fa-edit"></i></a>
+            <a href="{{ url_for('posts.delete_post', post_id=post.id) }}"> <i class="fas fa-trash-alt"></i></a>
+            <a href="{{ url_for('posts.update_post', post_id=post.id) }}"><i class="fas fa-edit"></i></a>
         </div>
         {% endif %}
         <div class="box-top">
