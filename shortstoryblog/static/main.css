@@ -221,6 +221,7 @@ body {
 .card-container .paginate-container .btn-info {
   background-color: var(--clr1);
   color: #fff;
+  pointer-events: none;
 }
 
 /* #################################################################################
