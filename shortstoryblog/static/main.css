@@ -418,6 +418,10 @@ body {
   padding: 1rem;
 }
 
+.body-content .content-section h2 {
+  margin-bottom: 1rem;
+}
+
 .body-content .content-section form .form-group {
   display: flex;
   flex-direction: column;
