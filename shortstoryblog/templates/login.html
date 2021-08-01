@@ -33,7 +33,7 @@
     </div>
     <div class="form-group">
         {{form.submit(class="btn", placeholder = form.submit.label.text)}}
-        <a class="forget_pass" href="">Forget Your Password?</a>
+        <a class="forget_pass" href="{{ url_for('users.reset_request') }}">Forget Your Password?</a>
     </div>
 </form>
 {% endblock authentication_content %}
