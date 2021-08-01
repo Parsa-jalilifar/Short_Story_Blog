@@ -4,13 +4,14 @@
 <div class="card-container">
     {% for post in posts.items %}
     <div class="card-box">
+        {% if post.author == current_user %}
+        <div class="card-controls">
+            <a href=""> <i class="fas fa-trash-alt"></i></a>
+            <a href=""><i class="fas fa-edit"></i></a>
+        </div>
+        {% endif %}
         <div class="box-top">
             <p>{{post.date_posted.strftime("%d %B, %Y")}}</p>
-            {% if post.author == current_user %}
-            <span>&#10247;</span>
-            {% else %}
-            <span></span>
-            {% endif %}
         </div>
 
         <div class="box-title">
